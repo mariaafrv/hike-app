@@ -7,9 +7,11 @@ struct GradientButton: ButtonStyle {
       .padding(.vertical)
       .padding(.horizontal, 30)
       .background(
-        LinearGradient(colors: [.customGrayLight, .customGrayMedium],
+        configuration.isPressed ? LinearGradient(colors: [.customGrayMedium, .customGrayLight],
                        startPoint: .top,
-                       endPoint: .bottom))
+                       endPoint: .bottom) : LinearGradient(colors: [.customGrayLight, .customGrayMedium],
+                                                           startPoint: .top,
+                                                           endPoint: .bottom))
       .cornerRadius(40)
   }
 }
